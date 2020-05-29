@@ -29,7 +29,8 @@ class Router
 
             return $function;
         } catch (\Exception $e) {
-            echo '404 mofo';
+            header("HTTP/1.0 404 Not Found");
+            echo '404';
         }
     }
 

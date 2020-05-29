@@ -68,6 +68,7 @@ class App
         try {
             @$this->router->get($request, $routes[$method][$request], $args);
         }catch (\Throwable $e){
+            header("HTTP/1.0 404 Not Found");
             echo '404';
         }
     }
