@@ -6,7 +6,9 @@
 
 return [
     'get' => [
-        '/home' => 'HomeController@index'
+        '/' => 'HomeController@home',
+        '/home' => 'HomeController@index',
+
     ],
     'post' => [
         '/home' => 'HomeController@save'

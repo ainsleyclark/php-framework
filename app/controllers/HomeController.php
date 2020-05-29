@@ -14,6 +14,10 @@ class HomeController extends Controller
         $this->testModel = new TestModel();
     }
 
+    public function home()
+    {
+        echo 'Home';
+    }
 
     public function index($args)
     {
