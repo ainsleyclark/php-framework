@@ -1,0 +1,14 @@
+{
+    "name": "ainsley/php-framework",
+    "authors": [
+        {
+            "name": "Ainsley Clark",
+            "email": "info@ainsleyclark.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "greg-md/php-orm": "dev-master"
+    }
+}
