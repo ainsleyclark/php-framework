@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\controllers\Controller;
+use app\core\ViewMaker;
 use app\models\TestModel;
 
 class HomeController extends Controller
@@ -16,7 +17,7 @@ class HomeController extends Controller
 
     public function home()
     {
-        echo 'Home';
+        ViewMaker::View('home');
     }
 
     public function index($args)
