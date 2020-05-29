@@ -53,7 +53,7 @@ class App
         $uri = explode('?', $_SERVER['REQUEST_URI']);
         $request = $uri[0];
 
-        $tempArgs = explode('&', $uri[1]);
+        $tempArgs = (array_key_exists(1, $uri)) ? explode('&', $uri[1]) : [];
         $args = [];
 
         foreach ($tempArgs as $arg) {
@@ -64,7 +64,12 @@ class App
         $routesPath = str_ireplace('app/core', '', __DIR__) . 'routes/web.php';
         $routes = include $routesPath;
 
-        $this->router->get($request, $routes[$method][$request], $args);
+
+        try {
+            @$this->router->get($request, $routes[$method][$request], $args);
+        }catch (\Throwable $e){
+            echo '404';
+        }
     }
 
 

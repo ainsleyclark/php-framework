@@ -17,7 +17,7 @@ class HomeController extends Controller
 
     public function index($args)
     {
-        echo $this->testModel->test();
+        //echo $this->testModel->test();
         echo 'hello ' . $args['name'] . ' ' . $args['surname'];
     }
 
