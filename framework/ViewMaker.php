@@ -9,9 +9,8 @@ class ViewMaker
 
     public static function View($viewFile)
     {
+        $file = getPath('views', $viewFile . '.tmpl');
 
-        $base_path = str_ireplace('app/core', '', __DIR__);
-        $file = $base_path . 'app/views/' . $viewFile . '.tmpl';
 
         if (file_exists($file) && is_readable($file)) {
 
@@ -19,6 +18,8 @@ class ViewMaker
 
             $rawFile = file_get_contents($file);
             echo $rawFile;
+        }else{
+            dd($file . '  not found');
         }
     }
 

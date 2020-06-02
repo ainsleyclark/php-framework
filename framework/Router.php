@@ -17,7 +17,6 @@ class Router
 
     public function resolveRoute($classRoute, $args)
     {
-        try {
             $route = explode('@', $classRoute);
 
             $cname = str_replace('/', '\\', systemPaths['controllers']) . '\\' . $route[0];
@@ -26,10 +25,6 @@ class Router
             $function = $controller->$route1($args);
 
             return $function;
-        } catch (\Exception $e) {
-            header("HTTP/1.0 404 Not Found");
-            echo '404';
-        }
     }
 
     private function loadRoutes()
@@ -53,8 +48,7 @@ class Router
         try {
             @$this->resolveRoute($routes[$method][$request], $args);
         }catch (\Throwable $e){
-            header("HTTP/1.0 404 Not Found");
-            echo '404';
+            error('Error Code: ' . $e->getCode(), $e->getMessage(), $e->getFile() . '   |   Line Number: ' . $e->getLine(), $e->getTrace());
         }
     }
 }

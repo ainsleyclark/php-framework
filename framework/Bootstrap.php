@@ -1,12 +1,16 @@
 <?php
 
 /**
- *
+ * Load required functions
  */
 require_once getPath('helpers', 'global_functions.php');
 require_once getPath('vendor', 'autoload.php');
-require_once getPath('core', 'ViewMaker.php');
+require_once getPath('framework', 'ViewMaker.php');
 
+
+/**
+ * Configure auto class loading for namespace resolution
+ */
 spl_autoload_register(function ($class)
 {
     $class = explode('\\', $class);
@@ -17,7 +21,7 @@ spl_autoload_register(function ($class)
 
         $classRoutes = [
             'controllers',
-            'core',
+            'framework',
             'models',
             'helpers'
         ];

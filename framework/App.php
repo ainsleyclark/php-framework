@@ -8,6 +8,9 @@ class App
 {
     protected $router;
 
+    /**
+     * App constructor.
+     */
     public function __construct()
     {
         $this->router = new Router();
