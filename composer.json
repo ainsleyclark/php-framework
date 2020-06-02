@@ -4,11 +4,15 @@
         {
             "name": "Ainsley Clark",
             "email": "info@ainsleyclark.com"
+        },
+        {
+            "name": "Kirk Fletcher",
+            "email": "kirk@reddico.co.uk"
         }
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "greg-md/php-orm": "dev-master"
+
     }
 }
