@@ -13,7 +13,7 @@ CONST systemPaths = [
     'vendor' => 'vendor',
     'config' => 'config',
 ];
-include __DIR__ . '/../' . systemPaths['framework'] . '/helpers/global_functions.php';
+include __DIR__ . '/../' . systemPaths['helpers'] . '/global_functions.php';
 
 
 /**
