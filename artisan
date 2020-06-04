@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+
+<?php
+
+echo 'cunt chops';
+
+
+function getArgs($argv) {
+    // loop through each element in the $argv array
+    foreach($argv as $value)
+    {
+      echo "$value\n";
+    }
+}
+
+getArgs($argv);
