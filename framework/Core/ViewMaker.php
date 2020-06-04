@@ -108,6 +108,22 @@ class ViewMaker
     }
 
     /**
+     * Compile the for statements into valid PHP.
+     *
+     * @param  string  $expression
+     * @return string
+     */
+    protected function compileFor($expression)
+    {
+        return "<?php for{$expression}: ?>";
+    }
+
+    public function endIf()
+    {
+        return '<?php endif; ?>';
+    }
+
+    /**
      * Get String in Between.
      *
      * @param $str
